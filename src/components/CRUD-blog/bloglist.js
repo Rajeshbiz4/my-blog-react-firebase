@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import fb from '../../firebase';
+import './BlogComponent.css'; // Custom CSS for styling
 
 const db = fb.firestore();
 const Blogs = db.collection('blogs');
@@ -30,21 +31,26 @@ function BlogComponent() {
   };
 
   return (
-    <div>
-      <h1>Blog List</h1>
-      {blogs.length > 0 ? (
-        blogs.map(blog => (
-          <div key={blog.id} style={{ border: '1px solid #ddd', padding: '10px', margin: '10px' }}>
-            <h2>{blog.title}</h2>
-            <p>{blog.content}</p>
-            <Link to={`/view/${blog.id}`}><button>View</button></Link>
-            <Link to={`/modify/${blog.id}`}><button>Modify</button></Link>
-            <button onClick={() => handleDelete(blog.id)}>Delete</button>
-          </div>
-        ))
-      ) : (
-        <p>No blogs available.</p>
-      )}
+    <div className="blog-list-container">
+      <h1 className="title">Blog List</h1>
+      <div className="blog-grid">
+        {blogs.length > 0 ? (
+          blogs.map(blog => (
+            <div key={blog.id} className="blog-card">
+              <img src={blog.image || 'blog.jpeg'} alt={blog.title} className="blog-image" />
+              <h2 className="blog-title">{blog.title}</h2>
+              {/* <p className="blog-content">{blog.content}</p> */}
+              <div className="button-group">
+                <Link to={`/view/${blog.id}`}><button className="view-button">View</button></Link>
+                <Link to={`/modify/${blog.id}`}><button className="modify-button">Modify</button></Link>
+                <button className="delete-button" onClick={() => handleDelete(blog.id)}>Delete</button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="no-blogs">No blogs available.</p>
+        )}
+      </div>
     </div>
   );
 }
