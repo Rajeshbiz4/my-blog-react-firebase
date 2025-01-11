@@ -22,7 +22,7 @@ function ViewBlog() {
   if (!blog) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div style={{ width: "60%", margin : "0 auto"}}>
       <h1>{blog.title}</h1>
     
       <div contentEditable='true' dangerouslySetInnerHTML={{ __html: blog.content }}></div>
