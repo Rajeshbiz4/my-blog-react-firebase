@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8; /* Example background color */
+    border-top: 1px solid #ccc; /* Optional border for separation */
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between footer links */
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #333; /* Text color */
+  }
+  
+  .copyright {
+    text-align: right; /* Align copyright text to the right */
+    color: #666; /* Lighter text color */
+  }
