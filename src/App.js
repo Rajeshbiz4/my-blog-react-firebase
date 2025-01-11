@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import Create from './components/CRUD-blog/CreateBlog';
 import BlogComponent from './components/CRUD-blog/bloglist';
 import ViewBlog from './components/CRUD-blog/viewblog';
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App"> 
       <Analytics />
+      <SpeedInsights />
       <Header />
       <Router>
       <Routes>
