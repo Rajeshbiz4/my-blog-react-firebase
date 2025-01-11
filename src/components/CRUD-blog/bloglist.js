@@ -32,13 +32,12 @@ function BlogComponent() {
 
   return (
     <div className="blog-list-container">
-      <h1 className="title">Blog List</h1>
       <div className="blog-grid">
         {blogs.length > 0 ? (
           blogs.map(blog => (
             <div key={blog.id} className="blog-card">
               <img src={blog.image || 'blog.jpeg'} alt={blog.title} className="blog-image" />
-              <h2 className="blog-title">{blog.title}</h2>
+              <span className="blog-title">{blog.title}</span>
               {/* <p className="blog-content">{blog.content}</p> */}
               <div className="button-group">
                 <Link to={`/view/${blog.id}`}><button className="view-button">View</button></Link>

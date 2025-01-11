@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Example background color */
+  }
+  
+  .logo img {
+    height: 40px; /* Adjust as needed */
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between menu items */
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333; /* Text color */
+  }
+  
+  .user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between profile and logout */
+  }
+  
+  .user-menu a {
+    text-decoration: none;
+    color: #333; /* Text color for Profile link */
+  }
+  
+  .user-menu button {
+    background-color: #ff4d4d; /* Example logout button color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
